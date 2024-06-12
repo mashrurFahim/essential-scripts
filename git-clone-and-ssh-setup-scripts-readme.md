@@ -27,10 +27,22 @@ This script automates the process of setting up SSH keys, cloning GitHub reposit
      chmod +x git_clone_and_setup.sh
      ```
 
-3. **Run the Script**:
-   - Execute the script in your terminal:
+3. **Create an Alias** (Optional):
+   - To simplify usage, add an alias to your shell profile (e.g., `~/.bashrc`, `~/.zshrc`):
      ```sh
-     ./git_clone_and_setup.sh
+     alias gcsshset='~/work/git_clone_and_setup.sh'
+     ```
+   - Reload your shell profile or restart your terminal:
+     ```sh
+     source ~/.bashrc  # or ~/.zshrc
+     ```
+
+4. **Run the Script**:
+   - Execute the script using the alias (if set) or directly:
+     ```sh
+     gcsshset  # If alias is set
+     # or
+     ./git_clone_and_setup.sh  # Direct execution
      ```
 
 4. **Follow the Prompts**:
