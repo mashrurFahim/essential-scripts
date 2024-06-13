@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Set your designated work directory
-WORK_DIR=~/work # your work directory
-
 # Function to create SSH key, add to SSH agent, update SSH config, and set remote origin
 create_ssh_key_and_clone_repo() {
     local repo_url=$1
@@ -104,12 +101,17 @@ select_subdirectory() {
 
 # Main script
 
-# Check if the script is being run from the designated work directory or its subdirectories
-if [[ "$PWD" != "$WORK_DIR"* ]]; then
-    echo "Warning: You are not in the designated work directory or its subdirectories."
-    echo "Attempting to select a subdirectory in the work directory..."
-    select_subdirectory
+# Set your designated work directory
+WORK_DIR=~/work
+
+# Ensure the WORK_DIR exists
+if [ ! -d "$WORK_DIR" ]; then
+    echo "The specified work directory does not exist. Please create it or set the correct path in the script."
+    exit 1
 fi
+
+# Always prompt the user to select a subdirectory in the work directory
+select_subdirectory
 
 # Prompt for user input
 read -p "Enter the GitHub repository URL: " repo_url
