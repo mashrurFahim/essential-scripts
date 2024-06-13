@@ -37,7 +37,7 @@ This script automates the process of setting up SSH keys, cloning GitHub reposit
 4. **Create an Alias** (Optional):
    - To simplify usage, add an alias to your shell profile (e.g., `~/.bashrc`, `~/.zshrc`):
      ```sh
-     alias csshgr='/path/to/your/script/directory/git_clone_and_setup.sh'
+     alias gcsshset='/path/to/your/script/directory/git_clone_and_setup.sh'
      ```
    - Reload your shell profile or restart your terminal:
      ```sh
@@ -49,7 +49,7 @@ This script automates the process of setting up SSH keys, cloning GitHub reposit
 1. **Run the Script**:
    - Execute the script using the alias (if set) or directly:
      ```sh
-     csshgr  # If alias is set
+     gcsshset  # If alias is set
      # or
      ./git_clone_and_setup.sh  # Direct execution
      ```
